@@ -74,8 +74,6 @@ function tablerow() {
 # ==================================================
 # SCRIPT STARTS HERE
 # ==================================================
-
-tableline "bottomline"
 DIR="dotfiles2"
 FILEPATH="$HOME/$DIR"
 
@@ -84,6 +82,7 @@ rm -rf $DIR
 git clone git@github.com:johnmarco123/$DIR.git
 cd $DIR
 
+tableline "topline"
 # tmux conf
 print "     Copying tmux conf"
 cp .tmux.conf ~/.tmux.conf
