@@ -84,35 +84,35 @@ cd $DIR
 
 tableline "topline"
 # tmux conf
-print "     Copying tmux conf"
+print "     Shooting tmux conf!"
 cp .tmux.conf ~/.tmux.conf
 
 # all of nvim
-print "     Copying neovim"
+print "     Shooting neovim!"
 mkdir -p ~/.config
 rm -rf ~/.config/nvim
 cp -r nvim ~/.config/
 
 # i3 conf
-print "     Copying i3 config"
+print "     Shooting i3 config!"
 mkdir -p ~/.config/i3
 cp config ~/.config/i3/config
 
 # bashrc
-print "     Copying bashrc"
+print "     Shooting bashrc!"
 cp .bashrc ~/.bashrc
 
 # gnome styles
-print "     Copying gnome styles"
+print "     Shooting gnome styles!"
 mkdir -p ~/.config/gtk-3.0/
 cp gtk.css ~/.config/gtk-3.0/gtk.css
 
 # copy save script
-print "     Copying load script"
+print "     Shooting load script!"
 sudo cp load /usr/local/bin/
 #
 # copy this script
-print "     Copying shoot script"
+print "     Shooting shoot script!"
 sudo cp shoot /usr/local/bin/
 
 tableline "bottomline"

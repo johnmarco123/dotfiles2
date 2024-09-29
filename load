@@ -88,32 +88,32 @@ cd ~/$FILE
 rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$')
 
 # tmux conf
-print "Copying files to $FILEPATH"
-print "     Copying tmux conf"
+print "Loading files to $FILEPATH..."
+print "     Loading tmux conf..."
 cp ~/.tmux.conf .
 
 # all of nvim
-print "     Copying neovim"
+print "     Loading neovim..."
 cp -r ~/.config/nvim/ .
 
 # i3 conf
-print "     Copying i3 config"
+print "     Loading i3 config..."
 cp -r ~/.config/i3/config .
 
 # bashrc
-print "     Copying bashrc"
+print "     Loading bashrc..."
 cp ~/.bashrc .
 
 # gnome styles
-print "     Copying gnome styles"
+print "     Loading gnome styles..."
 cp ~/.config/gtk-3.0/gtk.css .
 
 # copy this script
-print "     Copying load script"
+print "     Loading load script..."
 cp /usr/local/bin/load .
 
 # copy dotfiles script
-print "     Copying shoot script"
+print "     Loading shoot script..."
 cp /usr/local/bin/shoot .
 
 
