@@ -122,7 +122,7 @@ if test -d ~/$FILE/.git; then
     success "Pushing to github!"
     tableline 1
     git add .
-    git commit -m 'autosaved from save script...'
+    git commit -m 'autosaved from load script...'
     git push
 else 
     :
