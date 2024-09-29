@@ -1,5 +1,4 @@
 #/usr/bin/env bash
-#testing something
 # a bunch of colors for printf
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
