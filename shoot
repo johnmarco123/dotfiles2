@@ -74,7 +74,8 @@ function tablerow() {
 # ==================================================
 # SCRIPT STARTS HERE
 # ==================================================
-tableline "topline"
+
+tableline "bottomline"
 DIR="dotfiles2"
 FILEPATH="$HOME/$DIR"
 
