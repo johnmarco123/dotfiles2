@@ -1,4 +1,5 @@
 #/usr/bin/env bash
+# This script pulls all my configs and updates my github dot files with them
 # a bunch of colors for printf
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
@@ -70,63 +71,46 @@ function tablerow() {
     ROW="${ROW}${NORMAL}|"
     printf "%40s\n" "$ROW"
 }
-
+# ==================================================
+# SCRIPT STARTS HERE
+# ==================================================
 tableline "topline"
+DIR="dotfiles2"
+FILEPATH="$HOME/$DIR"
 
-FILE="dotfiles2"
-FILEPATH="$HOME/$FILE"
-
-if test -d ~/$FILE; then
-    :
-else
-    success "Created directory $FILEPATH"
-fi
-mkdir -p ~/$FILE # makes the file if it does not already exist
-cd ~/$FILE
-
-# removed all but . .. and .git if the file isn't empty
-rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$')
+cd ~
+rm -rf $DIR
+git clone git@github.com:johnmarco123/$DIR.git
+cd $DIR
 
 # tmux conf
-print "Copying files to $FILEPATH"
 print "     Copying tmux conf"
-cp ~/.tmux.conf .
+cp .tmux.conf ~/.tmux.conf
 
 # all of nvim
 print "     Copying neovim"
-cp -r ~/.config/nvim/ .
+mkdir -p ~/.config
+rm -rf ~/.config/nvim
+cp -r nvim ~/.config/
 
 # i3 conf
 print "     Copying i3 config"
-cp -r ~/.config/i3/config .
+mkdir -p ~/.config/i3
+cp config ~/.config/i3/config
 
 # bashrc
 print "     Copying bashrc"
-cp ~/.bashrc .
+cp .bashrc ~/.bashrc
 
 # gnome styles
 print "     Copying gnome styles"
-cp ~/.config/gtk-3.0/gtk.css .
+mkdir -p ~/.config/gtk-3.0/
+cp gtk.css ~/.config/gtk-3.0/gtk.css
 
+# copy save script
+print "     Copying load script"
+sudo cp load /usr/local/bin/
+#
 # copy this script
-print "     Copying save script"
-cp /usr/local/bin/save .
-
-# copy dotfiles script
-print "     Copying dotfiles script"
-cp /usr/local/bin/dotfiles .
-
-
-if test -d ~/$FILE/.git; then
-    success "$FILEPATH/.git exists!"
-    success "Pushing to github!"
-    tableline 1
-    git add .
-    git commit -m 'autosaved from save script...'
-    git push
-else 
-    :
-    warning "$FILEPATH/.git does not exist!"
-    warning "Cannot push to github!"
-    tableline 1
-fi
+print "     Copying shoot script"
+sudo cp shoot /usr/local/bin/
