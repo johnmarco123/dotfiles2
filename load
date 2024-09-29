@@ -114,7 +114,7 @@ cp /usr/local/bin/load .
 
 # copy dotfiles script
 print "     Copying shoot script"
-cp /usr/local/bin/shoot dotfiles.
+cp /usr/local/bin/shoot .
 
 
 if test -d ~/$FILE/.git; then
