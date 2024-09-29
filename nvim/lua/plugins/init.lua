@@ -19,9 +19,6 @@ return {
     --'jbyuki/nabla.nvim' -- math linter
     -- note taking
     'simrat39/rust-tools.nvim',
-    'tpope/vim-dadbod',
-    'kristijanhusak/vim-dadbod-completion',
-    'kristijanhusak/vim-dadbod-ui',
     -- Debugging
     --'mfussenegger/nvim-dap'
     --'folke/zen-mode.nvim'
