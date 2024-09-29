@@ -1,4 +1,5 @@
 return {
+    globals = {'vim'},
     'folke/tokyonight.nvim',
     {
         'rose-pine/neovim',
