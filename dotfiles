@@ -1,0 +1,116 @@
+#/usr/bin/env bash
+# This script pulls all my configs and updates my github dot files with them
+# a bunch of colors for printf
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+LIME_YELLOW=$(tput setaf 190)
+POWDER_BLUE=$(tput setaf 153)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+BRIGHT=$(tput bold)
+NORMAL=$(tput sgr0)
+BLINK=$(tput blink)
+REVERSE=$(tput smso)
+UNDERLINE=$(tput smul)
+
+# resets all foregrounds and backgrounds back to normal
+X="\e[40m\e[97m" 
+function warning() {
+    LENGTH=${#1}
+    RESULT="$RED$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+function success() {
+    LENGTH=${#1}
+    RESULT="$GREEN$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+function print() {
+    LENGTH=${#1}
+    RESULT="$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+TABLEWIDTH=100
+TABLECHAR="*"
+function tableline() {
+    LINE=""
+    if [ $1 == "topline" ]; then
+        LINE=" ${LINE}"
+    else
+        LINE="|${LINE}"
+    fi
+
+    SIZE=$(($TABLEWIDTH-2))
+    for i in $(seq 1 $SIZE); do
+        LINE="${LINE}_"
+    done
+
+    if [ $1 == "topline" ]; then
+        LINE="${LINE}"
+    else
+        LINE="${LINE}|"
+    fi
+    printf "%40s\n" "$LINE"
+}
+
+function tablerow() {
+    ROW="|$1"
+    LENGTH=$2
+    SPACE=" "
+    SIZE=$(($TABLEWIDTH-$LENGTH-2))
+    for i in $(seq 1 $SIZE); do
+        ROW="${ROW}${SPACE}"
+    done
+    ROW="${ROW}${NORMAL}|"
+    printf "%40s\n" "$ROW"
+}
+# ==================================================
+# SCRIPT STARTS HERE
+# ==================================================
+tableline "topline"
+DIR="dotfiles2"
+FILEPATH="$HOME/$DIR"
+
+cd ~
+rm -rf $DIR
+git clone git@github.com:johnmarco123/$DIR.git
+cd $DIR
+
+# tmux conf
+print "     Copying tmux conf"
+cp .tmux.conf ~/.tmux.conf
+
+# all of nvim
+print "     Copying neovim"
+mkdir -p ~/.config
+rm -rf ~/.config/nvim
+cp -r nvim ~/.config/
+
+# i3 conf
+print "     Copying i3 config"
+mkdir -p ~/.config/i3
+cp config ~/.config/i3/config
+
+# bashrc
+print "     Copying bashrc"
+cp .bashrc ~/.bashrc
+
+# gnome styles
+print "     Copying gnome styles"
+mkdir -p ~/.config/gtk-3.0/
+cp gtk.css ~/.config/gtk-3.0/gtk.css
+
+# copy save script
+print "     Copying save script"
+sudo cp save /usr/local/bin/
+#
+# copy this script
+print "     Copying dotfiles script"
+sudo cp dotfiles /usr/local/bin/
