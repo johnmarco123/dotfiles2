@@ -197,7 +197,7 @@ exec brave-browser
 exec brave-browser
 
 exec gnome-terminal
-assign [class="Gnome-terminal"] $ws3
+assign [class="Gnome-terminal"] $ws2
 
 exec slack
 assign [class="Slack"] $ws4
