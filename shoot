@@ -114,3 +114,5 @@ sudo cp load /usr/local/bin/
 # copy this script
 print "     Copying shoot script"
 sudo cp shoot /usr/local/bin/
+
+tableline
