@@ -1,0 +1,127 @@
+#/usr/bin/env bash
+# a bunch of colors for printf
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+LIME_YELLOW=$(tput setaf 190)
+POWDER_BLUE=$(tput setaf 153)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+BRIGHT=$(tput bold)
+NORMAL=$(tput sgr0)
+BLINK=$(tput blink)
+REVERSE=$(tput smso)
+UNDERLINE=$(tput smul)
+
+# resets all foregrounds and backgrounds back to normal
+X="\e[40m\e[97m" 
+function warning() {
+    LENGTH=${#1}
+    RESULT="$RED$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+function success() {
+    LENGTH=${#1}
+    RESULT="$GREEN$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+function print() {
+    LENGTH=${#1}
+    RESULT="$1"
+    tablerow "$RESULT" "$LENGTH"
+}
+
+TABLEWIDTH=100
+TABLECHAR="*"
+function tableline() {
+    LINE=""
+    if [ $1 == "topline" ]; then
+        LINE=" ${LINE}"
+    else
+        LINE="|${LINE}"
+    fi
+
+    SIZE=$(($TABLEWIDTH-2))
+    for i in $(seq 1 $SIZE); do
+        LINE="${LINE}_"
+    done
+
+    if [ $1 == "topline" ]; then
+        LINE="${LINE}"
+    else
+        LINE="${LINE}|"
+    fi
+    printf "%40s\n" "$LINE"
+}
+
+function tablerow() {
+    ROW="|$1"
+    LENGTH=$2
+    SPACE=" "
+    SIZE=$(($TABLEWIDTH-$LENGTH-2))
+    for i in $(seq 1 $SIZE); do
+        ROW="${ROW}${SPACE}"
+    done
+    ROW="${ROW}${NORMAL}|"
+    printf "%40s\n" "$ROW"
+}
+
+tableline "topline"
+
+FILE="dotfiles2"
+FILEPATH="$HOME/$FILE"
+
+if test -d ~/$FILE; then
+    :
+else
+    success "Created directory $FILEPATH"
+fi
+mkdir -p ~/$FILE # makes the file if it does not already exist
+cd ~/$FILE
+
+# removed all but . .. and .git if the file isn't empty
+rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$')
+
+# tmux conf
+print "Copying files to $FILEPATH"
+print "     Copying tmux conf"
+cp ~/.tmux.conf .
+
+# all of nvim
+print "     Copying neovim"
+cp -r ~/.config/nvim/ .
+
+# i3 conf
+print "     Copying i3 config"
+cp -r ~/.config/i3/config .
+
+# bashrc
+print "     Copying bashrc"
+cp ~/.bashrc .
+
+# gnome styles
+print "     Copying gnome styles"
+cp ~/.config/gtk-3.0/gtk.css .
+
+# copy this script
+print "     Copying save script"
+cp /usr/local/bin/save .
+
+if test -d ~/$FILE/.git; then
+    success "$FILEPATH/.git exists!"
+    success "Pushing to github!"
+    tableline 1
+    git add .
+    git commit -m 'autosaved from save script...'
+    git push
+else 
+    :
+    warning "$FILEPATH/.git does not exist!"
+    warning "Cannot push to github!"
+    tableline 1
+fi
