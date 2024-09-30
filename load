@@ -116,6 +116,11 @@ cp /usr/local/bin/load .
 print "     Loading shoot script..."
 cp /usr/local/bin/shoot .
 
+# copy tmuxsessionizer script
+print "     Loading tmux-sessionizer script..."
+cp /usr/local/bin/tmux-sessionizer .
+
+
 
 if test -d ~/$FILE/.git; then
     success "$FILEPATH/.git exists!"

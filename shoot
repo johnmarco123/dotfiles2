@@ -115,4 +115,7 @@ sudo cp load /usr/local/bin/
 print "     Shooting shoot script!"
 sudo cp shoot /usr/local/bin/
 
+print "     Loading tmux-sessionizer script..."
+sudo cp tmux-sessionizer /usr/local/bin/
+
 tableline "bottomline"
