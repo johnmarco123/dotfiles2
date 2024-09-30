@@ -203,4 +203,7 @@ assign [class="Brave-browser"] $ws3
 exec slack
 assign [class="Slack"] $ws4
 
+exec firefox
+assign [class="firefox"] $ws5
+
 exec --no-startup-id xsetroot -solid "#191724"
