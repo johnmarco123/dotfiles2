@@ -1,4 +1,5 @@
 #/usr/bin/env bash
+# This script pulls all my configs and updates my github dot files with them
 # a bunch of colors for printf
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
@@ -70,68 +71,51 @@ function tablerow() {
     ROW="${ROW}${NORMAL}|"
     printf "%40s\n" "$ROW"
 }
+# ==================================================
+# SCRIPT STARTS HERE
+# ==================================================
+DIR="dotfiles2"
+FILEPATH="$HOME/$DIR"
+
+cd ~
+rm -rf $DIR
+git clone git@github.com:johnmarco123/$DIR.git
+cd $DIR
 
 tableline "topline"
-
-FILE="dotfiles2"
-FILEPATH="$HOME/$FILE"
-
-if test -d ~/$FILE; then
-    :
-else
-    success "Created directory $FILEPATH"
-fi
-mkdir -p ~/$FILE # makes the file if it does not already exist
-cd ~/$FILE
-
-# removed all but . .. and .git if the file isn't empty
-rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$')
-
 # tmux conf
-print "Loading files to $FILEPATH..."
-print "     Loading tmux conf..."
-cp ~/.tmux.conf .
+print "     Moving tmux conf!"
+cp .tmux.conf ~/.tmux.conf
 
 # all of nvim
-print "     Loading neovim..."
-cp -r ~/.config/nvim/ .
+print "     Moving neovim!"
+mkdir -p ~/.config
+rm -rf ~/.config/nvim
+cp -r nvim ~/.config/
 
 # i3 conf
-print "     Loading i3 config..."
-cp -r ~/.config/i3/config .
+print "     Moving i3 config!"
+mkdir -p ~/.config/i3
+cp config ~/.config/i3/config
 
 # bashrc
-print "     Loading bashrc..."
-cp ~/.bashrc .
+print "     Moving bashrc!"
+cp .bashrc ~/.bashrc
 
 # gnome styles
-print "     Loading gnome styles..."
-cp ~/.config/gtk-3.0/gtk.css .
+print "     Moving gnome styles!"
+mkdir -p ~/.config/gtk-3.0/
+cp gtk.css ~/.config/gtk-3.0/gtk.css
 
+# copy save script
+print "     Moving save script!"
+sudo cp save /usr/local/bin/
+#
 # copy this script
-print "     Loading load script..."
-cp /usr/local/bin/load .
+print "     Moving clone script!"
+sudo cp clone /usr/local/bin/
 
-# copy dotfiles script
-print "     Loading shoot script..."
-cp /usr/local/bin/shoot .
-
-# copy tmuxsessionizer script
 print "     Loading tmux-sessionizer script..."
-cp /usr/local/bin/tmux-sessionizer .
+sudo cp tmux-sessionizer /usr/local/bin/
 
-
-
-if test -d ~/$FILE/.git; then
-    success "$FILEPATH/.git exists!"
-    success "Pushing to github!"
-    tableline 1
-    git add .
-    git commit -m 'autosaved from load script...'
-    git push
-else 
-    :
-    warning "$FILEPATH/.git does not exist!"
-    warning "Cannot push to github!"
-    tableline 1
-fi
+tableline "bottomline"
