@@ -1,5 +1,4 @@
 #/usr/bin/env bash
-# THE TABLE THAT GETS SHOWN, AND THE AWESOME COLORS BELOW
 # This script pulls all my configs and updates my github dot files with them
 # a bunch of colors for printf
 BLACK=$(tput setaf 0)
@@ -72,47 +71,51 @@ function tablerow() {
     ROW="${ROW}${NORMAL}|"
     printf "%40s\n" "$ROW"
 }
-
 # ==================================================
 # SCRIPT STARTS HERE
 # ==================================================
+DIR="dotfiles2"
+FILEPATH="$HOME/$DIR"
+
+cd ~
+rm -rf $DIR
+git clone git@github.com:johnmarco123/$DIR.git
+cd $DIR
 
 tableline "topline"
 # tmux conf
-print "Moving tmux conf!"
+print "     Moving tmux conf!"
 cp .tmux.conf ~/.tmux.conf
 
 # all of nvim
-print "Moving neovim!"
+print "     Moving neovim!"
 mkdir -p ~/.config
 rm -rf ~/.config/nvim
 cp -r nvim ~/.config/
 
 # i3 conf
-print "Moving i3 config!"
+print "     Moving i3 config!"
 mkdir -p ~/.config/i3
 cp config ~/.config/i3/config
 
 # bashrc
-print "Moving bashrc!"
+print "     Moving bashrc!"
 cp .bashrc ~/.bashrc
 
 # gnome styles
-print "Moving gnome styles!"
+print "     Moving gnome styles!"
 mkdir -p ~/.config/gtk-3.0/
 cp gtk.css ~/.config/gtk-3.0/gtk.css
 
 # copy save script
-print "Moving save script!"
+print "     Moving save script!"
 sudo cp save /usr/local/bin/
 #
 # copy this script
-print "Moving this script!"
-sudo cp configure /usr/local/bin/
+print "     Moving clone script!"
+sudo cp clone /usr/local/bin/
 
-print "Loading tmux-sessionizer script..."
+print "     Loading tmux-sessionizer script..."
 sudo cp tmux-sessionizer /usr/local/bin/
-
-success "Success!"
 
 tableline "bottomline"
