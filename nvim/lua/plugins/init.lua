@@ -1,15 +1,5 @@
 return {
     globals = {'vim'},
-    'folke/tokyonight.nvim',
-    {
-        'rose-pine/neovim',
-        name ='rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine');
-            vim.cmd([[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({higroup="IncSearch", timeout=50})]]);
-        end
-
-    },
     'nvim-lua/plenary.nvim',
     'mbbill/undotree',
     {
