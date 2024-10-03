@@ -112,8 +112,8 @@ print "     Moving save script!"
 sudo cp save /usr/local/bin/
 #
 # copy this script
-print "     Moving clone script!"
-sudo cp clone /usr/local/bin/
+print "     Moving configure script!"
+sudo cp configure /usr/local/bin/
 
 print "     Loading tmux-sessionizer script..."
 sudo cp tmux-sessionizer /usr/local/bin/
