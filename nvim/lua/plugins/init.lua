@@ -1,15 +1,5 @@
 return {
     globals = {'vim'},
-    'folke/tokyonight.nvim',
-    {
-        'rose-pine/neovim',
-        name ='rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine');
-            vim.cmd([[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({higroup="IncSearch", timeout=50})]]);
-        end
-
-    },
     'nvim-lua/plenary.nvim',
     'mbbill/undotree',
     {
@@ -18,11 +8,10 @@ return {
     },
     --'jbyuki/nabla.nvim' -- math linter
     -- note taking
-    'simrat39/rust-tools.nvim',
+    -- 'simrat39/rust-tools.nvim',
     -- Debugging
-    --'mfussenegger/nvim-dap'
+    --'mfussenegger/nvim-dap' <-- from prabs phpstorm
     --'folke/zen-mode.nvim'
-
     --'ggandor/leap.nvim'
     --({
     --    "stevearc/oil.nvim",
