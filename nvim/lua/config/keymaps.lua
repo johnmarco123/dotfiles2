@@ -1,9 +1,10 @@
--- Create a keybinding to run the current filetype interpreter
--- remap vimwiki to allow copilot autocompletion
 vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
-vim.g.copilot_filetypes = {markdown = true}
-vim.keymap.set("n", "ts", ":w | !npm test<CR>");
-vim.keymap.set("n", "<leader>m", ":wa | !cat input.txt | node %<CR>")
+-- remap vimwiki to allow copilot autocompletion
+--vim.g.copilot_filetypes = { markdown = true }
+-- vim.keymap.set("n", "ts", ":w | !npm test<CR>");
+-- vim.keymap.set("n", "<leader>m", ":wa | !cat input.txt | node %<CR>")
+-- auto refreshing server with browser-sync (only tested and working on windows
+-- machine)
 -- vim.keymap.set("n", "<leader>ss", ":tabnew server | terminal browser-sync start --server --files **/* <CR> :tabp <CR>")
 vim.keymap.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")
 vim.keymap.set("n", "<leader>ve", ":edit ~/.config/nvim/lua/ <CR>")
@@ -35,11 +36,12 @@ vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 -- M = alt
+--
 --vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
 --vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
-
 --vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 --vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+--
 -- shortcut for find and replace when you are on the word you want to replace
 vim.keymap.set("n", "<leader>c", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>")
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>")

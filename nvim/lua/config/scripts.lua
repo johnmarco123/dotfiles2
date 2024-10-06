@@ -22,5 +22,3 @@ function RunFiletypeInterpreter()
   end
 end
 vim.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
-
-
