@@ -10,6 +10,7 @@ return {
         'DBUIAddConnection',
         'DBUIFindBuffer',
     },
+    -- no folds!
     config = function()
         vim.api.nvim_create_autocmd('FileType', {
             pattern = { 'dbout' },
