@@ -14,7 +14,7 @@ function RunFiletypeInterpreter()
   elseif filetype == "rust" then
     vim.cmd[[:w | :!cargo run]]
   elseif filetype == "go" then
-    vim.cmd[[:w | :!go run %]]
+    vim.cmd[[:w | :!go run *.go]]
   elseif filetype == "php" then
     vim.cmd[[:w | :!php %]]
   else
