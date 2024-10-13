@@ -1,7 +1,7 @@
 return {
-    'kristijanhusak/vim-dadbod-ui',
+    'tpope/vim-dadbod', lazy = true,
     dependencies = {
-        { 'tpope/vim-dadbod', lazy = true },
+        'kristijanhusak/vim-dadbod-ui',
         { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
     cmd = {
@@ -10,7 +10,7 @@ return {
         'DBUIAddConnection',
         'DBUIFindBuffer',
     },
-    -- no folds!
+    -- NO FOLDS!
     config = function()
         vim.api.nvim_create_autocmd('FileType', {
             pattern = { 'dbout' },

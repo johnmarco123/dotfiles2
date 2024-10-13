@@ -105,7 +105,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
@@ -206,4 +206,4 @@ assign [class="Slack"] $ws4
 
 exec --no-startup-id xsetroot -solid "#191724"
 
-bindsym $mod+b exec 'brave-browser'
+bindsym $mod+space exec 'brave-browser'
