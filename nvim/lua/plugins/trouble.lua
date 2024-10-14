@@ -13,11 +13,11 @@ return {
         },
         {
             "[t",
-            "<cmd>Trouble next<cr>",
+            "<cmd>Trouble diagnostics next focus=true<cr>",
         },
         {
             "]t",
-            "<cmd>Trouble prev<cr>",
+            "<cmd>Trouble diagnostics prev focus=true<cr>",
         },
     },
 }

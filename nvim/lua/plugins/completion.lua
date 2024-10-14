@@ -36,7 +36,8 @@ return {
             })
         })
 
-          -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+          -- Use buffer source for `/` and `?` (if you enabled `native_menu`,
+          -- this won't work anymore).
           cmp.setup.cmdline({ '/', '?' }, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
@@ -44,6 +45,8 @@ return {
             }
           })
 
+          -- you can use echo &ft when using DBUI to see the filetype you need
+          -- to add here for autcomplete to work
           cmp.setup.filetype({ "sql", "mysql" }, {
               sources = {
                   { name = "vim-dadbod-completion" },

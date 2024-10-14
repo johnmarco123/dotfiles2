@@ -32,8 +32,7 @@ return {
                     }
                 end
                 }
-
             })
         end
     },
-}
+}-- so many curly brackets dear god...
