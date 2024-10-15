@@ -2,6 +2,7 @@ return {
     globals = {'vim'},
     'nvim-lua/plenary.nvim',
     'mbbill/undotree',
+    'Eandrju/cellular-automaton.nvim',
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
