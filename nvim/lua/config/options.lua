@@ -12,7 +12,6 @@ vim.o.smartindent = true
 vim.o.wrap = false
 vim.o.swapfile = false
 
-
 vim.o.backup = false -- whether or not to make vim backup files
 vim.o.undofile = true
 
@@ -20,7 +19,7 @@ vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir" -- the dir for undotree
 vim.o.hlsearch = false -- highlight all searches found and stay
 vim.o.incsearch = true -- search incrementaly
 vim.o.termguicolors = true
-vim.o.scrolloff = 8 
+vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 vim.o.updatetime = 50
 vim.o.colorcolumn = "80" -- the line indicator that should be right here ----->
