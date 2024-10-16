@@ -37,6 +37,8 @@ vim.keymap.set("n", "<leader>f", function()
 end)
 -- M = alt
 --
+vim.keymap.set("n", "<Up>", ":cprev<CR>")
+vim.keymap.set("n", "<Down>", ":cnext<CR>")
 --vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
 --vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
 --vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
