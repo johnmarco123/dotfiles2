@@ -5,6 +5,9 @@
 # ENABLE VI IN BASH!!!!!!! :O
 set -o vi
 export EDITOR="nvim"
+bind -m vi-insert "\C-l":clear-screen
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
