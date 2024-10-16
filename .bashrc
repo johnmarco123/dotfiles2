@@ -4,6 +4,7 @@
 
 # ENABLE VI IN BASH!!!!!!! :O
 set -o vi
+export EDITOR="nvim"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
