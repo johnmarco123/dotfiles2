@@ -131,6 +131,5 @@ export PATH=$PATH:/usr/local/go/bin
 set -o vi
 export EDITOR="nvim"
 bind -m vi-insert "C-l":clear-screen
+
 alias off="save && cd ~/vimwiki && git add . && git commit -m 'poweroff commit' && git push && poweroff"
-
-

@@ -9,6 +9,7 @@ vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
 vim.keymap.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")
 vim.keymap.set("n", "<leader>ve", ":edit ~/.config/nvim/lua/ <CR>")
 vim.keymap.set("n", "<leader>vi", ":edit ~/vimwiki/vim bible.wiki <CR>")
+vim.keymap.set("n", "<leader>bi", ":edit ~/vimwiki/ubuntu bible.wiki<CR>")
 vim.keymap.set("n", "<leader>td", ":edit ~/vimwiki/Tasks.wiki <CR>")
 
 vim.keymap.set("n", "<C-s>", ":w<CR>")
