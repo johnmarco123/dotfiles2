@@ -2,12 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# ENABLE VI IN BASH!!!!!!! :O
-set -o vi
-export EDITOR="nvim"
-bind -m vi-insert "C-l":clear-screen
-
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -128,3 +122,15 @@ export NVM_DIR="$HOME/.nvm"
 
 alias luamake="/home/john/personal/sumneko/3rd/luamake/luamake"
 export PATH=$PATH:/usr/local/go/bin
+
+#****************************************************************************
+# JOHN STUFF BELOW HERE
+#****************************************************************************
+
+# ENABLE VI IN BASH!!!!!!! :O
+set -o vi
+export EDITOR="nvim"
+bind -m vi-insert "C-l":clear-screen
+alias off="save && poweroff"
+
+
