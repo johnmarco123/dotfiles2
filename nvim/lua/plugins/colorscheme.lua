@@ -7,7 +7,7 @@ return {
         vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
         vim.api.nvim_set_hl(0, 'LineNr', { fg='white', bold=true })
         vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
-        vim.api.nvim_set_hl(0, 'IncSearch', { bg='#FF8C00', bold=true })
+        vim.api.nvim_set_hl(0, 'IncSearch', { bg='#FF8C00', fg="#000000", bold=true })
     end
     }
     --{
