@@ -1,0 +1,4 @@
+cd ~/dotfiles
+git pull
+cd ~/vimwiki
+git pull
