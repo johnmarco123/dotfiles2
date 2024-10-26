@@ -196,13 +196,10 @@ bar {
 }
 
 # Startup appplication run
-# 1 = random things, 2 terminal, 3 browser, 4 slack 5 spotify
+# 1 = random things, 2 terminal, 3 browser, 4 slack 5 email
 
 exec gnome-terminal
 assign [class="Gnome-terminal"] $ws2
-
-exec brave
-assign [class="Brave-browser"] $ws3
 
 exec slack
 assign [class="Slack"] $ws4
@@ -211,3 +208,5 @@ exec spotify
 assign [class="Spotify"] $ws5
 
 #exec --no-startup-id xsetroot -solid "#191724"
+
+bindsym $mod+space exec 'brave-browser'
