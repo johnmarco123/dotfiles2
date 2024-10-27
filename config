@@ -196,16 +196,19 @@ bar {
 }
 
 # Startup appplication run
-# 1 = random things, 2 terminal, 3 browser, 4 slack 5 email
+# localhost browser, terminal, non-local host browser, slack, spotify
+
+exec firefox
+assign [class="firefox"] $ws1
 
 exec gnome-terminal
 assign [class="Gnome-terminal"] $ws2
 
 exec slack
-assign [class="Slack"] $ws4
+assign [class="Brave-browser"] $ws3
 
 exec slack
-assign [class="Brave-browser"] $ws4
+assign [class="Slack"] $ws4
 
 exec spotify
 assign [class="Spotify"] $ws5
