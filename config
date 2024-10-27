@@ -204,9 +204,10 @@ assign [class="Gnome-terminal"] $ws2
 exec slack
 assign [class="Slack"] $ws4
 
+exec slack
+assign [class="Brave-browser"] $ws4
+
 exec spotify
 assign [class="Spotify"] $ws5
 
 #exec --no-startup-id xsetroot -solid "#191724"
-
-bindsym $mod+space exec 'brave-browser'
