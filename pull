@@ -1,4 +1,0 @@
-cd ~/dotfiles2
-git pull
-cd ~/vimwiki
-git pull

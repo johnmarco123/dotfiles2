@@ -107,9 +107,9 @@ cp gtk.css ~/.config/gtk-3.0/gtk.css
 print "Moving save script!"
 sudo cp save /usr/local/bin/
 
-# copy pull script
-print "Moving pull script!"
-sudo cp pull /usr/local/bin/
+# copy off script
+print "Moving off script!"
+sudo cp off /usr/local/bin/
 
 # copy this script
 print "Moving this script!"

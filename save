@@ -113,13 +113,13 @@ cp ~/.config/gtk-3.0/gtk.css .
 print "     Loading save script..."
 cp /usr/local/bin/save .
 
-# copy pull script
-print "     Loading pull script..."
-cp /usr/local/bin/pull .
-
 # copy configure script
 print "     Loading configure script..."
 cp /usr/local/bin/configure .
+
+# copy off script
+print "     Loading off script..."
+cp /usr/local/bin/off .
 
 # copy tmuxsessionizer script
 print "     Loading tmux-sessionizer script..."
