@@ -198,6 +198,9 @@ bar {
 # Startup appplication run
 # localhost browser, terminal, non-local host browser, slack, spotify
 
+exec firefox
+assign [class="Firefox"] $ws1
+
 exec gnome-terminal
 assign [class="Gnome-terminal"] $ws2
 
@@ -211,4 +214,4 @@ exec spotify
 assign [class="Spotify"] $ws5
 
 #exec --no-startup-id xsetroot -solid "#191724"
-bindsym $mod+space exec "brave-browser"
+#bindsym $mod+space exec "brave-browser"
