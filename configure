@@ -103,9 +103,9 @@ print "Moving gnome styles!"
 mkdir -p ~/.config/gtk-3.0/
 cp gtk.css ~/.config/gtk-3.0/gtk.css
 
-# copy save script
-print "Moving save script!"
-sudo cp save /usr/local/bin/
+# copy collect script
+print "Moving collect script!"
+sudo cp collect /usr/local/bin/
 
 # copy off script
 print "Moving off script!"

@@ -1,4 +1,0 @@
-#/usr/bin/env bash
-save
-cd ~/vimwiki && git add . && git commit -m 'poweroff commit' && git push
-poweroff

@@ -110,8 +110,8 @@ print "     Loading gnome styles..."
 cp ~/.config/gtk-3.0/gtk.css .
 
 # copy this script
-print "     Loading save script..."
-cp /usr/local/bin/save .
+print "     Loading collect script..."
+cp /usr/local/bin/collect .
 
 # copy configure script
 print "     Loading configure script..."
@@ -124,19 +124,3 @@ cp /usr/local/bin/off .
 # copy tmuxsessionizer script
 print "     Loading tmux-sessionizer script..."
 cp /usr/local/bin/tmux-sessionizer .
-
-
-# here we save, if and only if we have a working ssh key for the githubs
-if test -d ~/$FILE/.git; then
-    success "$FILEPATH/.git exists!"
-    success "Pushing to github!"
-    tableline 1
-    git add .
-    git commit -m 'autosaved from save script...'
-    git push
-else 
-    :
-    warning "$FILEPATH/.git does not exist!"
-    warning "Cannot push to github!"
-    tableline 1
-fi
