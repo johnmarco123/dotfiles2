@@ -107,10 +107,6 @@ cp gtk.css ~/.config/gtk-3.0/gtk.css
 print "Moving collect script!"
 sudo cp collect /usr/local/bin/
 
-# copy off script
-print "Moving off script!"
-sudo cp off /usr/local/bin/
-
 # copy this script
 print "Moving this script!"
 sudo cp configure /usr/local/bin/

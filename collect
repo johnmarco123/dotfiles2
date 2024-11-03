@@ -117,10 +117,6 @@ cp /usr/local/bin/collect .
 print "     Loading configure script..."
 cp /usr/local/bin/configure .
 
-# copy off script
-print "     Loading off script..."
-cp /usr/local/bin/off .
-
 # copy tmuxsessionizer script
 print "     Loading tmux-sessionizer script..."
 cp /usr/local/bin/tmux-sessionizer .
