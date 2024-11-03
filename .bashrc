@@ -128,6 +128,6 @@ export PATH=$PATH:/usr/local/go/bin
 #****************************************************************************
 
 # ENABLE VI IN BASH!!!!!!! :O
-set -o vi
-export EDITOR="nvim"
+#set -o vi
+#export EDITOR="nvim"
 bind -m vi-insert "C-l":clear-screen
