@@ -16,8 +16,8 @@ fi
 # up-to-date. Since directories are usually added to $HOME it is probably a
 # good idea to keep the initial example
 commands=(
-    "find $HOME -maxdepth 1 -type d"
     # Example command
+    "find $HOME -maxdepth 1 -type d"
 )
 
 combined_results=""
