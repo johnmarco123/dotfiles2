@@ -17,6 +17,8 @@ function RunFiletypeInterpreter()
     vim.cmd[[:w | :!go run *.go]]
   elseif filetype == "php" then
     vim.cmd[[:w | :!php %]]
+  elseif filetype == "conf" then -- bash
+    vim.cmd[[:w | :!./%]]
   else
     print("No interpreter found for filetype " .. filetype)
   end
