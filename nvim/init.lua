@@ -1,2 +1,0 @@
--- yay
-require('config.lazy')
