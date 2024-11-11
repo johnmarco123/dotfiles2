@@ -86,7 +86,7 @@ mkdir -p ~/$FILE # makes the file if it does not already exist
 cd ~/$FILE
 
 # removed all but . .. and .git if the file isn't empty
-rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$')
+rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$|^.gitmodules$')
 
 # tmux conf
 print "Loading files to $FILEPATH..."
