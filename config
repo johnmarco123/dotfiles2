@@ -198,6 +198,8 @@ bar {
 # Startup appplication run
 # localhost browser, terminal, non-local host browser, slack, spotify
 
+bindsym $mod+x exec --no-startup-id python3 ~/screen_locker/stealthy.py
+
 exec firefox
 assign [class="firefox"] $ws1
 
