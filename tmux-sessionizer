@@ -8,6 +8,17 @@ direct_paths_fullpath="$script_dir/$direct_paths_filename"
 wild_cards_filename=".tmux-sessionizer_wild.txt"
 wild_cards_fullpath="$script_dir/$wild_cards_filename" 
 
+
+if [ -f "$direct_paths_fullpath" ]; then
+    # If the file exists, change its permissions to 666
+    chmod 666 "$direct_paths_fullpath"
+fi
+
+if [ -f "$wild_cards_fullpath" ]; then
+    # If the file exists, change its permissions to 666
+    chmod 666 "$wild_cards_fullpath"
+fi
+
 if [[ $# -gt 0 ]]; then # If any flags, or extra params were given
 
 # we want it to be tmux-sessionizer -a/add ANY SORTA PATH (optional depth DEFAULT 0)
