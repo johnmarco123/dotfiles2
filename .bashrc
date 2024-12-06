@@ -131,7 +131,6 @@ export PATH=$PATH:/usr/local/go/bin
 set -o vi
 export EDITOR="nvim"
 bind -m vi-insert "C-l":clear-screen
-. "$HOME/.cargo/env"
 
 # security key stuff
 export GPG_TTY=$(tty)
