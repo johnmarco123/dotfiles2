@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+connected_monitors=$(xrandr | grep " connected" | awk '{print $1}')
+monitor_count=$(echo "$connected_monitors" | wc -l)
+
+if [ "$monitor_count" -eq 2 ]; then
+    primary_monitor=$(echo "$connected_monitors" | head -n 1)
+    secondary_monitor=$(echo "$connected_monitors" | tail -n 1)
+    xrandr --auto
+    xrandr --output "$secondary_monitor" --left-of "$primary_monitor"
+fi
