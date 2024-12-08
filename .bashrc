@@ -138,4 +138,8 @@ gpg-connect-agent updatestartuptty /bye > /dev/null
 unset SSH_AGENT_PID
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+# Adding to path
+export PATH="$PATH:~/.scripts"
+
+# Keybindings
 bind -x '"\C-f":tmux-sessionizer'

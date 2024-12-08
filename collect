@@ -89,34 +89,30 @@ cd ~/$FILE
 rm -rf $(ls -a | grep -vE '^\.$|^\.\.$|^\.git$|^.gitmodules$')
 
 # tmux conf
-print "Loading files to $FILEPATH..."
-print "     Loading tmux conf..."
+print "Collecting files to $FILEPATH..."
+print "     Collecting tmux conf..."
 cp ~/.tmux.conf .
 
 # all of nvim
-print "     Loading neovim..."
+print "     Collecting neovim..."
 cp -r ~/.config/nvim/ .
 
 # i3 conf
-print "     Loading i3 config..."
+print "     Collecting i3 config..."
 cp -r ~/.config/i3/config .
 
 # bashrc
-print "     Loading bashrc..."
+print "     Collecting bashrc..."
 cp ~/.bashrc .
 
 # gnome styles
-print "     Loading gnome styles..."
+print "     Collecting gnome styles..."
 cp ~/.config/gtk-3.0/gtk.css .
 
-# copy this script
-print "     Loading collect script..."
-cp /usr/local/bin/collect .
+# copy all scripts
+print "     Collecting all scripts..."
+cp ~/.scripts/* .
 
-# copy configure script
-print "     Loading configure script..."
-cp /usr/local/bin/configure .
+success "Success!"
 
-# copy tmuxsessionizer script
-print "     Loading tmux-sessionizer script..."
-cp /usr/local/bin/tmux-sessionizer .
+tableline "bottomline"

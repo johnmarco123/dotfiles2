@@ -103,16 +103,10 @@ print "Moving gnome styles!"
 mkdir -p ~/.config/gtk-3.0/
 cp gtk.css ~/.config/gtk-3.0/gtk.css
 
-# copy collect script
-print "Moving collect script!"
-sudo cp collect /usr/local/bin/
-
-# copy this script
-print "Moving this script!"
-sudo cp configure /usr/local/bin/
-
-print "Loading tmux-sessionizer script..."
-sudo cp tmux-sessionizer /usr/local/bin/
+# copy scripts
+print "Moving scripts!"
+mkdir -p ~/.scripts
+find . -maxdepth 1 -type f -executable ! -name ".*" | xargs -I {} cp {} ~/.scripts
 
 success "Success!"
 
