@@ -143,3 +143,4 @@ export PATH="$PATH:~/.scripts"
 
 # Keybindings
 bind -x '"\C-f":tmux-sessionizer'
+bind -x '"\C-r":source history-search'
