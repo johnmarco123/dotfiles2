@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$(dirname "$0")
+ls "$SCRIPT_DIR" | sed s/\ /\\n/g
