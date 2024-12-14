@@ -98,6 +98,10 @@ cp config ~/.config/i3/config
 print "Moving bashrc!"
 cp .bashrc ~/.bashrc
 
+# zshrc
+print "Moving zshrc!"
+cp .zshrc ~/.zshrc
+
 # gnome styles
 print "Moving gnome styles!"
 mkdir -p ~/.config/gtk-3.0/
