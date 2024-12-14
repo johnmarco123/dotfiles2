@@ -76,7 +76,7 @@ git
 )
 source $ZSH/oh-my-zsh.sh
 bindkey '^I' autosuggest-accept
-
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 # User configuration
