@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 # a bunch of colors for printf
 BLACK=$(tput setaf 0)
@@ -37,7 +37,7 @@ function print() {
     tablerow "$RESULT" "$LENGTH"
 }
 
-TABLEWIDTH=100
+TABLEWIDTH=50
 TABLECHAR="*"
 function tableline() {
     LINE=""

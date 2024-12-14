@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-history | fzf --tac --height=50% | sed 's/^[ ]*[0-9]*[ ]*//g' | xargs -I {} bash -c "{}"

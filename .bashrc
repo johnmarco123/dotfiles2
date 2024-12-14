@@ -133,14 +133,13 @@ export EDITOR="nvim"
 bind -m vi-insert "C-l":clear-screen
 
 # security key stuff
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye > /dev/null
-unset SSH_AGENT_PID
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#export GPG_TTY=$(tty)
+#gpg-connect-agent updatestartuptty /bye > /dev/null
+#unset SSH_AGENT_PID
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # Adding to path
 export PATH="$PATH:~/.scripts"
 
 # Keybindings
 bind -x '"\C-f":tmux-sessionizer'
-bind -x '"\C-r":source history-search'
