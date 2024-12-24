@@ -4,10 +4,12 @@
 connected_monitors=$(xrandr | grep " connected" | awk '{print $1}')
 monitor_count=$(echo "$connected_monitors" | wc -l)
 
-if [ "$monitor_count" -eq 2 ]; then
+if [ "$monitor_count" -gt 1 ]; then
+    # Go through xrandr results, and grab the first two results that show up
+    conntected_monitors=$(echo "$connected_monitors" | sed -n '1,2p')
     primary_monitor=$(echo "$connected_monitors" | head -n 1)
     secondary_monitor=$(echo "$connected_monitors" | tail -n 1)
-    xrandr --auto
+    xrandr --output "$secondary_monitor" --auto
     xrandr --output "$secondary_monitor" --left-of "$primary_monitor"
     for i in {1..5}; do
         # Move workspace to the new monitor
