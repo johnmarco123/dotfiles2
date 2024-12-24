@@ -6,7 +6,7 @@ monitor_count=$(echo "$connected_monitors" | wc -l)
 
 if [ "$monitor_count" -gt 1 ]; then
     # Go through xrandr results, and grab the first two results that show up
-    conntected_monitors=$(echo "$connected_monitors" | sed -n '1,2p')
+    connected_monitors=$(echo "$connected_monitors" | sed -n '1,2p')
     primary_monitor=$(echo "$connected_monitors" | head -n 1)
     secondary_monitor=$(echo "$connected_monitors" | tail -n 1)
     xrandr --output "$secondary_monitor" --auto
