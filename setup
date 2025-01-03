@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# this script will open up required apps that are closed. This works together
+# with the i3 config function, except this isn't automatically called, and
+# instead you call it yourself when you closed some of the necessary tabs
+
+# Function to check if a process is running and execute the command if not
+# passing true as the second parameter will forcefully open the app
+check_and_run() {
+    local app=$1
+    local force=$2
+
+    if ! pgrep -x "$app" > /dev/null || [[ "$force" == true ]]; then
+        #echo "Starting $app..."
+        $app > /dev/null 2>&1 &
+    else
+        :
+        #echo "$app is already running."
+    fi
+}
+
+check_and_run firefox
+check_and_run gnome-terminal
+check_and_run brave-browser
+check_and_run slack true
+check_and_run spotify true
