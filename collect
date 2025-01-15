@@ -117,6 +117,10 @@ cp ~/.config/gtk-3.0/gtk.css .
 print "     Collecting all scripts..."
 cp ~/.scripts/* .
 
+# copy xbind remaps
+print "     Collecting xbind remaps..."
+cp ~/.xbindkeysrc .
+
 success "Success!"
 
 tableline "bottomline"
