@@ -1,0 +1,143 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.7
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+#"xbindkeys_show" 
+#  control+shift + q
+
+# set directly keycode (here control + f with my keyboard)
+#"xterm"
+#  c:41 + m:0x4
+
+# specify a mouse button
+#"xterm"
+#  control + b:2
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$       JOHN STUFF START        $$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#
+#  = SEE YOUR KEY PRESSES =
+#  xev -event button | grep button
+#  
+#  = TO MAKE YOUR KEY RC THING =
+#  xbindkeys --defaults >> ~/.xbindkeysrc
+#  
+#  = TO RESTART XBINDKEYS =
+#  pkill -f xbindkeys
+#  xbindkeys 
+#
+#  = YOU ALSO MIGHT NEED TO USE SOLAAR =
+
+# b:1 = left click
+# b:2 = middle click
+# b:3 = right click
+# b:4 = middle wheel scroll up
+# b:5 = middle wheel scroll down
+# b:6 = left wheel mouse scroll down
+# b:7 = left wheel mouse scroll up
+# b:8 = prev button
+# b:7 = next button
+# b:10 = logi gesture button
+
+
+# ********************************************************************
+# Things that I wanna do while only touching my mouse...
+# ********************************************************************
+
+# volume control
+"pactl set-sink-volume @DEFAULT_SINK@ +1%"
+    b:6
+"pactl set-sink-volume @DEFAULT_SINK@ -1%"
+    b:7
+
+# copy
+"xdotool key Ctrl+c"
+    b:8
+# pasta
+"xdotool key Ctrl+Shift+v"
+    b:9
+
+# enter
+"xdotool key Return"
+    b:10
+
+# **********************************
+# CONTROL HELD DOWN
+# **********************************
+# Control layer used for basic utilities that I don't mind holding down an
+# extra key for
+
+# spotify/media player controls
+"playerctl previous"
+    control + b:8
+"playerctl next"
+    control + b:9
+"playerctl play-pause"
+    control + b:10
+
+# screenshot & gif recording
+"shutter"
+    control + b:1
+"peek"
+    control + b:3
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$       JOHN STUFF END          $$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+##################################
+# End of xbindkeys configuration #
+##################################

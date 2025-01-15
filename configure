@@ -113,7 +113,7 @@ mkdir -p ~/.scripts
 find . -maxdepth 1 -type f -executable ! -name ".*" | xargs -I {} cp {} ~/.scripts
 
 # copy xbind remaps
-print "     Collecting xbind remaps..."
+print "Moving xbindkeysrc!"
 cp .xbindkeysrc ~/.xbindkeysrc
 
 success "Success!"
