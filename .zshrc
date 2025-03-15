@@ -116,5 +116,6 @@ export PATH="$PATH:$HOME/.scripts"
 
 # Keybindings
 bindkey -s '^F' 'tmux-sessionizer\n'
+bindkey -s '^A' 'tmux a\n'
 export PATH="/home/john/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/john/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

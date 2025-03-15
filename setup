@@ -9,12 +9,21 @@ check_and_run() {
     local app=$1
     local force=$2
 
-    if ! pgrep -x "$app" > /dev/null || [[ "$force" == true ]]; then
+    if [[ "$app" == "gnome-terminal" ]]; then
+        pgrep "$app" > /dev/null
+    else
+        pgrep -x "$app" > /dev/null
+    fi
+
+    # this saves the exit status of the last executed command
+    app_running=$?
+
+    if [[ "$app_running" -ne 0 || "$force" == true ]]; then
         #echo "Starting $app..."
         $app > /dev/null 2>&1 &
     else
         :
-        #echo "$app is already running."
+        echo "$app is already running."
     fi
 }
 

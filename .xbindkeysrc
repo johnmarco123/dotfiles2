@@ -128,10 +128,10 @@
     control + b:10
 
 # screenshot & gif recording
-"shutter"
-    control + b:1
-"peek"
-    control + b:3
+#"shutter"
+#    control + b:1
+#"peek"
+#    control + b:3
 
 
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
