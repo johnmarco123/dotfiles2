@@ -103,11 +103,11 @@
     b:7
 
 # copy
-"xdotool key Ctrl+c"
-    b:8
-# pasta
-"xdotool key Ctrl+Shift+v"
-    b:9
+#"xdotool key Ctrl+c"
+#    b:8
+## pasta
+#"xdotool key Ctrl+Shift+v"
+#    b:9
 
 # enter
 "xdotool key Return"
@@ -121,11 +121,11 @@
 
 # spotify/media player controls
 "playerctl previous"
-    control + b:8
+    b:8
 "playerctl next"
-    control + b:9
+    b:9
 "playerctl play-pause"
-    control + b:10
+    b:10
 
 # screenshot & gif recording
 #"shutter"

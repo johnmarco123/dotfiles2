@@ -119,3 +119,6 @@ bindkey -s '^F' 'tmux-sessionizer\n'
 bindkey -s '^A' 'tmux a\n'
 export PATH="/home/john/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/john/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+export PATH=$PATH:~/.platformio/penv/bin

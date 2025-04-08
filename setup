@@ -9,6 +9,7 @@ check_and_run() {
     local app=$1
     local force=$2
 
+    # For gnome-terminal don't do exact matching...
     if [[ "$app" == "gnome-terminal" ]]; then
         pgrep "$app" > /dev/null
     else
@@ -26,6 +27,8 @@ check_and_run() {
         echo "$app is already running."
     fi
 }
+
+
 
 check_and_run firefox
 check_and_run gnome-terminal
