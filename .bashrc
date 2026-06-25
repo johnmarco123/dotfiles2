@@ -143,3 +143,7 @@ export PATH="$PATH:~/.scripts"
 
 # Keybindings
 bind -x '"\C-f":tmux-sessionizer'
+export PATH="$HOME/cybersecurity/bugbounty/scripts:$PATH"
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH="/home/john/.local/bin:$PATH"
