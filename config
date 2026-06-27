@@ -209,8 +209,8 @@ assign [class="Gnome-terminal"] $ws2
 exec brave-browser
 assign [class="Brave-browser"] $ws3
 
-exec slack
-assign [class="Slack"] $ws4
+exec discord
+assign [class="Discord"] $ws4
 
 exec spotify
 assign [class="Spotify"] $ws5
